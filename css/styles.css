@@ -1,0 +1,755 @@
+/* Section 1 desde el n° 1 al n° 13*/
+/* Navbar y menu desde el n° 14  al n° 29*/
+/* Section 2 desde n° 30 al n°43 */
+/* Section 3 desde n°44 al n°65 */
+/* Section 4 desde n° 66 al n° 78*/
+/* Footer n° 79 al n° ...... */
+
+/* Estilos generales */
+/* 1 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "Oswald", sans-serif;
+}
+
+/* 2 */
+html {
+  font-size: 62.5%;
+  /* Para lograr hacer la animacion entre una seccion y otra */
+  scroll-behavior: smooth;
+}
+
+/* Cierre estilos generales */
+
+/* 14 */
+/* navbar y menú*/
+
+.navbar {
+  width: 100%;
+  height: 8rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: -8rem;
+  padding: 3rem;
+  z-index: 10;
+  animation: animarNavbar 1s 0.5s forwards;
+  transition: height 0.5s;
+}
+
+/* 15 */
+/* para funcionalidad menu en JS */
+.navbar.change {
+  height: 100vh;
+}
+
+/* 16 */
+@keyframes animarNavbar {
+  0% {
+    top: -8rem;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+/* 17 */
+.navbar-logo {
+  position: absolute;
+  top: 1.5rem;
+  left: 4rem;
+}
+
+/* 18 */
+.navbar-logo a {
+  font-family: "Martel Sans", sans-serif;
+  font-size: 2.5rem;
+  color: #eee;
+  letter-spacing: 0.1rem;
+}
+
+/* 19 */
+.navbar-logo span {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #ad580e;
+  font-family: "Martel Sans", sans-serif;
+}
+
+/* 20 */
+.menu {
+  width: 4rem;
+  height: 4rem;
+  position: fixed;
+  z-index: 500;
+  top: 2rem;
+  right: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+/* 21 */
+.line {
+  width: 100%;
+  height: 0.2rem;
+  background-color: #eee;
+  transition: transform 0.3s;
+}
+
+/* 22 */
+.line-1 {
+  width: 50%;
+}
+
+/* 23 */
+.line-3 {
+  width: 50%;
+  margin-left: auto;
+}
+
+/* 28 */
+.change .line-1 {
+  transform: translate(100%, 1rem) rotate(-35deg);
+  transform-origin: right;
+}
+
+/* 29 */
+.change .line-3 {
+  transform: translateY(-1rem) rotate(35deg);
+  transform-origin: right;
+}
+
+/* 24 */
+/* creantrado */
+.nav-list {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+}
+
+/* 27 */
+.change .nav-list {
+  opacity: 1;
+  visibility: visible;
+  transform: all 0s 0.5s;
+}
+
+/* 25 */
+.nav-link {
+  font-family: "Oswald", sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+  color: #fff;
+  margin: 1rem 0;
+  transition: color 0.4s;
+}
+
+/* 26 */
+.nav-link:hover {
+  color: #9e0e09;
+}
+
+/* Cierre navbar y menú */
+/* Section 1 */
+/* 3 */
+.section-1 {
+  width: 100%;
+  height: 100vh;
+  background: url("/img/fondo-header.jpg") no-repeat;
+  background-size: cover;
+  /* hasta la linea de arriba, la imagen se pocisiona de manera correcta */
+}
+/* 4 */
+
+/* centrado  banner */
+.banner {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+}
+/* 5 */
+
+.banner-heading {
+  height: 20rem;
+  margin-bottom: 4rem;
+  /* para definir la perspectiva cuando se aplica una transformacion 3D*/
+  perspective: 50rem;
+  overflow: hidden;
+}
+
+/* 6 */
+
+.banner-heading span {
+  font-family: "Oswald", sans-serif;
+  font-size: 12rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 0.3rem 0.3rem 0.6rem rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transform: translateZ(8rem);
+  opacity: 0;
+  letter-spacing: 1rem;
+}
+
+/* 10 */
+/* Usar animacion para cada uno de los textos heading */
+.heading-1 {
+  animation: animarEncabezado 12s 3s infinite;
+}
+
+.heading-2 {
+  animation: animarEncabezado 12s 6s infinite;
+}
+
+.heading-3 {
+  animation: animarEncabezado 12s 9s infinite;
+}
+
+.heading-4 {
+  animation: animarEncabezado 12s 12s infinite;
+}
+
+/* 9 */
+/* Animacion span headings */
+@keyframes animarEncabezado {
+  0% {
+    transform: translateZ(8rem);
+    opacity: 0;
+    letter-spacing: 3rem;
+  }
+  3% {
+    transform: translateZ(0);
+    opacity: 1;
+    letter-spacing: 1.5rem;
+  }
+  25% {
+    transform: translateZ(0);
+    opacity: 1;
+    letter-spacing: 1.5rem;
+  }
+  35% {
+    transform: translateZ(8rem);
+    opacity: 0;
+    letter-spacing: 3rem;
+  }
+  100% {
+    transform: translateZ(8rem);
+    opacity: 0;
+    letter-spacing: 3rem;
+  }
+}
+
+/* 7 */
+.banner-paragraph {
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 30%;
+  margin: 0 auto 6rem auto;
+  padding: 1rem 0;
+  box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.5);
+  /* Para la animacion */
+  opacity: 0;
+  visibility: hidden;
+  animation: animacionSalida 1s 1.5s forwards;
+}
+
+/* 11 */
+@keyframes animacionSalida {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* 8 */
+.banner-btn {
+  width: 30rem;
+  height: 6rem;
+  background: linear-gradient(to right, #9b0e0e, #7a1010);
+  color: #fff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  border-radius: 3rem;
+  border: 0.1rem solid #800505;
+  box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.5);
+  text-shadow: 0.6rem 0.3rem 0.2rem rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  /* Para la animacion */
+  opacity: 0;
+  visibility: hidden;
+  position: relative;
+  overflow: hidden;
+  animation: animacionSalida 1s 2s forwards;
+}
+
+/* 12 */
+.banner-btn::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #fff, transparent);
+  position: absolute;
+  top: 0;
+  left: -100%;
+  transform: skewX(-30deg);
+  transition: left 0.5s;
+}
+/* 13 */
+/* aqui gracias a lo de arriba, se genera una iluminacion */
+.banner-btn:hover::before {
+  left: 100%;
+}
+
+/* Section 2 */
+
+/* 30 */
+.section-2 {
+  width: 100%;
+  height: 100vh;
+  background-color: #222020;
+  display: flex;
+  align-items: center;
+  padding: 0 10rem;
+  position: relative;
+}
+
+/* 31 */
+.section-heading {
+  font-size: 10rem;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  color: #ddd;
+  margin-right: 4rem;
+}
+
+/* 32 */
+.section-heading-line {
+  width: 15rem;
+  height: 0.2rem;
+  background-color: #ddd;
+}
+
+/* 33 */
+.video-wrapper {
+  width: 100rem;
+  height: 50rem;
+  position: absolute;
+  top: 5rem;
+  right: 15rem;
+  box-shadow: 3rem 3rem 6rem rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+/* 34 */
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+
+/* 39 */
+.controls {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateY(calc(100% - 0.4rem));
+  transition: transform 0.4s;
+}
+
+/* 38 */
+.video-wrapper:hover .controls {
+  transform: translateY(0);
+}
+
+/* 40 */
+.video-bar-wrapper {
+  width: 100%;
+  height: 0.7rem;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 41 */
+.video-bar {
+  height: 100%;
+  width: 0;
+  background-color: #d30819;
+  transition: width 0.2s linear;
+}
+
+/* 42 */
+.buttons {
+  padding: 2rem 1rem 1rem 1rem;
+}
+
+/* 44 */
+.buttons i {
+  width: 3rem;
+  height: 3rem;
+  font-size: 2.8rem;
+  color: #fff;
+}
+
+/* 43 */
+.buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* 35 */
+.section-2-paragraph {
+  width: 100rem;
+  position: absolute;
+  bottom: 6rem;
+  right: 15rem;
+  font-size: 2rem;
+  line-height: 1.5;
+  color: #ddd;
+  border-top: 0.3rem double #aaa;
+  border-bottom: 0.3rem double #aaa;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.7);
+}
+
+/* 36 */
+.fa-quote-left {
+  align-self: flex-start;
+  font-size: 5rem;
+  color: #bbb;
+  margin-bottom: 2rem;
+}
+
+/* 37 */
+.fa-quote-right {
+  align-self: flex-end;
+  font-size: 5rem;
+  color: #bbb;
+}
+
+/* Section 3 */
+/* 45 */
+
+.section-3 {
+  width: 100%;
+  height: 100vh;
+  background-color: #03070e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10rem;
+}
+
+/* 46 */
+.pricing-cards-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5rem;
+}
+
+/* 47 */
+.pricing-card {
+  width: 28rem;
+  height: 45rem;
+  background-color: #181b1d;
+  border-radius: 1rem;
+  box-shadow: 2rem 2rem 6rem rgba(0, 0, 0, 0.7);
+  margin: 0.5rem;
+}
+
+/* 48 */
+.pricing-card-front {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 49 */
+.pricing-card-heading {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 400;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* 50 */
+.heading-free {
+  background: linear-gradient(to right, #087285, #0da5d3);
+}
+
+/* 60 */
+.heading-basic {
+  background: linear-gradient(to right, #946809, #bdba0e);
+}
+
+/* 61 */
+.heading-standard {
+  background: linear-gradient(to right, #a10c14, #e23b3b);
+}
+
+/* 62 */
+.heading-diamant {
+  background: linear-gradient(to right, #0b7e48, #3be286);
+}
+
+.pricing-card-price {
+  font-family: "Martel Sans", sans-serif;
+  font-size: 7rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+/* 51 */
+.pricing-card-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* 52 */
+.pricing-card-list i {
+  font-size: 1.8rem;
+  width: 3rem;
+}
+
+/* 53 */
+.pricing-card span {
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+}
+
+/* 54 */
+.list-free {
+  color: #0da5d3;
+}
+
+/* 57 */
+.list-basic {
+  color: #bdba0e;
+}
+
+/* 58 */
+.list-standard {
+  color: #e23b3b;
+}
+
+/* 59 */
+.list-diamant {
+  color: #3be286;
+}
+
+/* 55 */
+.pricing-card-btn {
+  width: 18rem;
+  height: 5rem;
+  margin-bottom: 3rem;
+  border-radius: 3rem;
+  border: none;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0.3rem 0.3rem 0.6rem rgba(0, 0, 0, 0.5);
+}
+
+/* 56 */
+.btn-free {
+  background-color: #0da5d3;
+}
+
+/* 63 */
+.btn-basic {
+  background-color: #bdba0e;
+}
+
+/* 64 */
+.btn-standard {
+  background-color: #e23b3b;
+}
+
+/* 65 */
+.btn-diamant {
+  background-color: #3be286;
+}
+
+/* Cierra Section 3 */
+
+/* Section 4 */
+/* 66 */
+.section-4 {
+  width: 100%;
+  height: 100vh;
+  background-color: #171718;
+  display: flex;
+  align-items: center;
+  padding: 0 10rem;
+}
+
+/* 67 */
+.contact-wrapper {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 68 */
+.contact-details {
+  display: flex;
+  margin-bottom: 8rem;
+}
+
+/* 69 */
+.contact-details div {
+  width: 25rem;
+  text-align: center;
+  margin: 4rem;
+}
+
+/* 70 */
+.contact-details i {
+  font-size: 5rem;
+  color: #7a1010;
+}
+
+/* 71 */
+.contact-details h3 {
+  font-family: "Martel Sans", sans-serif;
+  font-size: 2.5rem;
+  margin: 2rem 0;
+  color: #ccc;
+}
+
+/* 72 */
+.contact-details p {
+  font-size: 1.6rem;
+  color: #ccc;
+}
+
+/* 73 */
+.contact-wrapper h1 {
+  font-size: 4rem;
+  color: #ccc;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+/* 74 */
+.contact-form {
+  width: 70rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 75 */
+.contact-form input,
+.contact-form textarea {
+  padding: 1.5rem;
+  background-color: #444;
+  color: #eee;
+  border: none;
+  margin-bottom: 2rem;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+}
+
+/* 76 */
+.contact-form textarea {
+  max-width: 100%;
+  max-height: 15rem;
+  min-height: 5.5rem;
+}
+
+/* 77 */
+.contact-form input[type="submit"] {
+  background-color: #7a1010;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* 78 */
+.contact-form input[type="submit"]:hover {
+  background-color: #5f0303;
+}
+
+/* Cierra section 4 */
+
+/* Footer */
+.footer {
+  width: 100%;
+  height: 12rem;
+  background-color: #202122;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10rem;
+}
+
+.footer-nav a {
+  font-family: "Martel Sans", sans-serif;
+  font-size: 2rem;
+  color: #ccc;
+  margin-right: 3rem;
+  letter-spacing: 0.1rem;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #862323;
+}
+
+.copyright {
+  font-size: 2rem;
+  color: #ddd;
+}
+
+/* Cierra footer */
